@@ -4,6 +4,7 @@ import { userRoutes } from "../modules/User/user.route";
 import { boardRoutes } from "../modules/Board/board.route";
 import { memberRoutes } from "../modules/Member/member.route";
 import { boardColumnRoutes, columnRoutes } from "../modules/Column/column.route";
+import { columnTaskRoutes, taskRoutes } from "../modules/Task/task.route";
 
 const router = express.Router();
 
@@ -31,6 +32,14 @@ const moduleRoutes = [
     {
         path: "/columns",
         route: columnRoutes,
+    },
+    {
+        path: "/columns/:columnId/tasks",
+        route: columnTaskRoutes,
+    },
+    {
+        path: "/tasks",
+        route: taskRoutes,
     }
 ];
 
