@@ -3,6 +3,7 @@ import { authRoutes } from "../modules/Auth/auth.route";
 import { userRoutes } from "../modules/User/user.route";
 import { boardRoutes } from "../modules/Board/board.route";
 import { memberRoutes } from "../modules/Member/member.route";
+import { boardColumnRoutes, columnRoutes } from "../modules/Column/column.route";
 
 const router = express.Router();
 
@@ -22,6 +23,14 @@ const moduleRoutes = [
     {
         path: "/boards/:boardId/members",
         route: memberRoutes,
+    },
+    {
+        path: "/boards/:boardId/columns",
+        route: boardColumnRoutes,
+    },
+    {
+        path: "/columns",
+        route: columnRoutes,
     }
 ];
 
