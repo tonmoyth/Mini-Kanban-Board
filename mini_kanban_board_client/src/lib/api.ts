@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api/v1";
+const BASE_URL = (process.env.BACKEND_INTERNAL_URL ? `${process.env.BACKEND_INTERNAL_URL}/api/v1` : process.env.NEXT_PUBLIC_API_BASE_URL) || "http://localhost:5000/api/v1";
 
 export async function fetchApi<T>(path: string, options: RequestInit = {}): Promise<T> {
   const cookieStore = await cookies();
